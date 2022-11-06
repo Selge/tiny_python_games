@@ -4,19 +4,22 @@ import os
 def welcome():
     print("Welcome to the 'Tiny Python games shell'!\n"
           "Please, select a game from the list below:\n"
-          " - a 'Guess the number' \n"
-          " - b 'Dragon cave' \n"
+          " - g 'Guess the number' \n"
+          " - d 'Dragon cave' \n"
           " - c 'Coin flip' \n"
+          " - h 'Hangman'"
           " - e to exit the program")
 
     choice = str(input())
 
-    if choice == 'a':
+    if choice == 'g':
         os.system("guess_the_number.py")
-    elif choice == 'b':
+    elif choice == 'd':
         os.system("dragon_cave.py")
     elif choice == 'c':
         os.system("coin_flip.py")
+    elif choice == 'h':
+        os.system("hangman.py")
     elif choice == 'e':
         exit()
     else:

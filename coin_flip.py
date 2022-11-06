@@ -1,5 +1,7 @@
-import random
 import time
+from random import choice
+
+coin = ['head', 'tail']
 
 
 def start():
@@ -24,10 +26,10 @@ def flip_coin():
     print("Tossing a coin...")
     time.sleep(3)
 
-    flipped_coin = random.randint(0, 1)
-    if flipped_coin == 0:
+    flipped_coin = choice(coin)
+    if flipped_coin == 'head':
         print("Came up heads.")
-    elif flipped_coin == 1:
+    elif flipped_coin == 'tail':
         print("Came up tails.")
 
     print("Wanna try again? y/n\n"
@@ -54,14 +56,14 @@ def flip_coin_game():
     if player_answer == 'h':
 
         print(f"Well, I will flip a coin {coin_order} times. Guess how many times it will come up heads.\n")
-        flipped_coin = random.randint(0, 1)
+        flipped_coin = choice(coin)
         print("Tossing a coin...")
         time.sleep(3)
 
         heads = 0
         flips = 0
         while flips < coin_order:
-            if flipped_coin == 0:
+            if flipped_coin == 'head':
                 heads = heads + 1
             flips = flips + 1
 
@@ -78,14 +80,14 @@ def flip_coin_game():
 
     elif player_answer == 't':
         print(f"Well, I will flip a coin {coin_order} times. Guess how many times it will come up tails.\n")
-        flipped_coin = random.randint(0, 1)
+        flipped_coin = choice(coin)
         print("Tossing a coin...")
         time.sleep(3)
 
         tails = 0
         flips = 0
         while flips < coin_order:
-            if flipped_coin == 1:
+            if flipped_coin == 'tail':
                 tails = tails + 1
             flips = flips + 1
 
