@@ -1,5 +1,13 @@
 import os
 
+games = {
+    'c': os.system("coin_flip.py"),
+    'd': os.system("dragon_cave.py"),
+    'g': os.system("guess_the_number.py"),
+    'e': exit(),
+    'h': os.system("hangman.py")
+}
+
 
 def welcome():
     print("Welcome to the 'Tiny Python games shell'!\n"
@@ -12,16 +20,9 @@ def welcome():
 
     choice = str(input())
 
-    if choice == 'g':
-        os.system("guess_the_number.py")
-    elif choice == 'd':
-        os.system("dragon_cave.py")
-    elif choice == 'c':
-        os.system("coin_flip.py")
-    elif choice == 'h':
-        os.system("hangman.py")
-    elif choice == 'e':
-        exit()
+    for i in games:
+        if choice == games[i]:
+            games[i]
     else:
         print("Please, use built-in options!")
         welcome()
