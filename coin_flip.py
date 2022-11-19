@@ -11,13 +11,14 @@ def start():
           "- I want to play a flip coin game (tap '2')")
 
     start_choice = str(input())
-    if start_choice == '1':
-        flip_coin()
-    elif start_choice == '2':
-        flip_coin_game()
-    else:
-        print("Please, use built-in options!")
-        start()
+    match start_choice:
+        case '1':
+            flip_coin()
+        case '2':
+            flip_coin_game()
+        case _:
+            print("Please, use built-in options!")
+            start()
 
 
 def flip_coin():
@@ -27,10 +28,11 @@ def flip_coin():
     time.sleep(3)
 
     flipped_coin = choice(coin)
-    if flipped_coin == 'head':
-        print("Came up heads.")
-    elif flipped_coin == 'tail':
-        print("Came up tails.")
+    match flipped_coin:
+        case 'head':
+            print("Came up heads.")
+        case 'tail':
+            print("Came up tails.")
 
     print("Wanna try again? y/n\n"
           "Or type in 'm' to get back to the main menu")
