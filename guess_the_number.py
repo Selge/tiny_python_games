@@ -10,14 +10,15 @@ def welcome():
 def wanna_play(player_name):
     print(f"Well, {player_name}, wanna play a little bit? y/n?")
     player_answer = str(input())
-    if player_answer == "y":
-        game_menu()
-    elif player_answer == "n":
-        print("Well, see ya later! Bye!")
-        exit()
-    else:
-        print("Please, use built-in options!")
-        wanna_play(player_name)
+    match player_answer:
+        case "y":
+            game_menu()
+        case "n":
+            print("Well, see ya later! Bye!")
+            exit()
+        case _:
+            print("Please, use built-in options!")
+            wanna_play(player_name)
 
 
 def game_menu():
@@ -27,18 +28,19 @@ def game_menu():
           " - 'c' to guess a number between 0 and 1000\n"
           " - 'e' if you've changed your mind and wanna get out of here")
     player_answer = str(input())
-    if player_answer == "a":
-        game_a()
-    elif player_answer == "b":
-        game_b()
-    elif player_answer == "c":
-        game_c()
-    elif player_answer == "e":
-        print("Well, see ya later! Bye!")
-        exit()
-    else:
-        print("Please, use built-in options!")
-        game_menu()
+    match player_answer:
+        case "a":
+            game_a()
+        case "b":
+            game_b()
+        case "c":
+            game_c()
+        case "e":
+            print("Well, see ya later! Bye!")
+            exit()
+        case _:
+            print("Please, use built-in options!")
+            game_menu()
 
 
 def game_a():
@@ -112,14 +114,15 @@ def game_c():
 def restart():
     print("Play again? y/n")
     player_answer = str(input())
-    if player_answer == "y":
-        game_menu()
-    elif player_answer == "n":
-        print("Well, see ya later! Bye!")
-        exit()
-    else:
-        print("Please, use built-in options!")
-        restart()
+    match player_answer:
+        case "y":
+            game_menu()
+        case "n":
+            print("Well, see ya later! Bye!")
+            exit()
+        case _:
+            print("Please, use built-in options!")
+            restart()
 
 
 if __name__ == '__main__':

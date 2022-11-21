@@ -37,15 +37,16 @@ def flip_coin():
     print("Wanna try again? y/n\n"
           "Or type in 'm' to get back to the main menu")
     player_answer = str(input())
-    if player_answer == "y":
-        flip_coin()
-    elif player_answer == "n":
-        print("Well, see ya later! Bye!")
-        exit()
-    elif player_answer == "m":
-        start()
-    else:
-        exit()
+    match player_answer:
+        case "y":
+            flip_coin()
+        case "n":
+            print("Well, see ya later! Bye!")
+            exit()
+        case "m":
+            start()
+        case _:
+            exit()
 
 
 def flip_coin_game():
@@ -111,15 +112,16 @@ def flip_coin_game():
     print("Wanna try again? y/n\n"
           "Or type in 'm' to get back to the main menu")
     player_answer = str(input())
-    if player_answer == "y":
-        flip_coin_game()
-    elif player_answer == "n":
-        print("Well, see ya later! Bye!")
-        exit()
-    elif player_answer == "m":
-        start()
-    else:
-        exit()
+    match player_answer:
+        case "y":
+            flip_coin_game()
+        case "n":
+            print("Well, see ya later! Bye!")
+            exit()
+        case "m":
+            start()
+        case _:
+            exit()
 
 
 if __name__ == '__main__':
