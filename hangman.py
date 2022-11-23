@@ -91,9 +91,10 @@ words = {'Colors': 'red orange yellow green blue indigo violet white black brown
          'Animals': 'bat bear beaver cat cougar crab deer dog donkey duck eagle fish frog goat leech lion lizard monkey moose mouse otter owl panda python rabbit rat shark sheep skunk squid tiger turkey turtle weasel whale wolf wombat zebra'.split()}
 
 
-def get_random_word(word_list):
-    word_index = random.randint(0, len(word_list) - 1)
-    return word_list[word_index]
+def get_random_word(word_dict):
+    word_key = random.choice(list(word_dict.keys()))
+    word_index = random.randint(0, len(word_dict[word_key]) - 1)
+    return [word_dict[word_key][word_index], word_key]
 
 
 def display_board(missed_letters, correct_letters, secret_word):
