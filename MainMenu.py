@@ -43,11 +43,11 @@ def game_menu():
         case 'b':
             pass
         case 'c':
-            return os.system("coin_flip.py")
+            os.system("coin_flip.py")
         case 'd':
-            return os.system("dragon_cave.py")
+            os.system("dragon_cave.py")
         case 'g':
-            return os.system("guess_the_number.py")
+            os.system("guess_the_number.py")
         case 'e':
             exit()
         case 'h':
