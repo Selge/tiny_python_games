@@ -90,6 +90,8 @@ words = {'Colors': 'red orange yellow green blue indigo violet white black brown
          'Fruits': 'apple orange lemon lime pear watermelon grape grapefruit cherry banana cantaloupe mango strawberry tomato'.split(),
          'Animals': 'bat bear beaver cat cougar crab deer dog donkey duck eagle fish frog goat leech lion lizard monkey moose mouse otter owl panda python rabbit rat shark sheep skunk squid tiger turkey turtle weasel whale wolf wombat zebra'.split()}
 
+iq_levels = {'E': 'Easy', 'M': 'Medium', 'H': 'Hard'}
+
 
 def get_random_word(word_dict):
     word_key = random.choice(list(word_dict.keys()))
@@ -144,12 +146,28 @@ def play_again():
 
 def hangman():
     print("'H A N G M A N'")
+
+    difficulty = 'X'
+    while difficulty not in iq_levels.keys():
+        print('Enter difficulty: E - Easy, M - Medium, H - Hard')
+        difficulty = input().upper()
+        match difficulty:
+            case 'M':
+                del HANGMAN_PICS[8]
+                del HANGMAN_PICS[7]
+            case 'H':
+                del HANGMAN_PICS[8]
+                del HANGMAN_PICS[7]
+                del HANGMAN_PICS[5]
+                del HANGMAN_PICS[3]
+
     missed_letters = ''
     correct_letters = ''
-    secret_word = get_random_word(words)
+    secret_word, secret_set = get_random_word(words)
     game_is_over = False
 
     while True:
+        print('The secret word is in the set: ' + secret_set)
         display_board(missed_letters, correct_letters, secret_word)
 
         guess = get_guess(missed_letters + correct_letters)
