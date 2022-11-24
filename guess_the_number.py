@@ -1,27 +1,8 @@
 import random
 
 
-def welcome():
-    print("Welcome to 'Guess the number'!\nPlease,type in your name: ")
-    player_name = input()
-    wanna_play(player_name)
-
-
-def wanna_play(player_name):
-    print(f"Well, {player_name}, wanna play a little bit? y/n?")
-    player_answer = str(input())
-    match player_answer:
-        case "y":
-            game_menu()
-        case "n":
-            print("Well, see ya later! Bye!")
-            exit()
-        case _:
-            print("Please, use built-in options!")
-            wanna_play(player_name)
-
-
 def game_menu():
+    print("Welcome to 'Guess the number'!")
     print("Please choose target difficulty level. Type in:\n"
           " - 'a' to guess a number between 0 and 10\n"
           " - 'b' to guess a number between 0 and 100\n"
@@ -126,4 +107,4 @@ def restart():
 
 
 if __name__ == '__main__':
-    welcome()
+    game_menu()
