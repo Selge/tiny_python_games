@@ -179,9 +179,9 @@ def hangman():
                 if secret_word[i] not in correct_letters:
                     found_all_letters = False
                     break
-                if found_all_letters:
-                    print(f"Yes! The secret word is '{secret_word}'! You have won!")
-                    game_is_over = True
+            if found_all_letters:
+                print(f"Yes! The secret word is '{secret_word}'! You have won!")
+                game_is_over = True
         else:
             missed_letters = missed_letters + guess
 
