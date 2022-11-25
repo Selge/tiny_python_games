@@ -1,5 +1,11 @@
 import random
 
+
+def welcome():
+    print("Welcome to the 'Hangman'!")
+    hangman()
+
+
 HANGMAN_PICS = ['''
     +---+
         |
@@ -197,4 +203,4 @@ def hangman():
 
 
 if __name__ == '__main__':
-    hangman()
+    welcome()

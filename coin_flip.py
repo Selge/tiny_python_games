@@ -1,12 +1,17 @@
 import time
 from random import choice
 
+
+def welcome():
+    print("Welcome to the 'Coin Flip'!")
+    start()
+
+
 coin = ['head', 'tail']
 
 
 def start():
-    print("Welcome to the 'Coin flip'!\n"
-          "What do you expect?\n"
+    print("What do you expect?\n"
           "- I want to flip a coin once (tap '1')"
           "- I want to play a flip coin game (tap '2')")
 
@@ -116,4 +121,4 @@ def coin_flipper(coin_order, coin_side):
 
 
 if __name__ == '__main__':
-    start()
+    welcome()

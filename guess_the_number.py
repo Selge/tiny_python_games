@@ -1,8 +1,12 @@
 import random
 
 
-def game_menu():
+def welcome():
     print("Welcome to 'Guess the number'!")
+    game_menu()
+
+
+def game_menu():
     print("Please choose target difficulty level. Type in:\n"
           " - 'a' to guess a number between 0 and 10\n"
           " - 'b' to guess a number between 0 and 100\n"
@@ -81,4 +85,4 @@ def guess(number, range_guess):
 
 
 if __name__ == '__main__':
-    game_menu()
+    welcome()

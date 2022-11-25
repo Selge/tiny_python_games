@@ -57,7 +57,7 @@ def game_menu():
         case 's':
             pass
         case 't':
-            pass
+            os.system("tictactoe.py")
         case _:
             print("Please, use built-in options!")
 
