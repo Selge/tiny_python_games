@@ -16,9 +16,16 @@ def draw_board(board):
 
 def input_player_sign():
     sign = ''
+
     while not (sign == 'X' or sign == 'O'):
         print('Do you want to be X or O?')
         sign = input().upper()
+
+    match sign:
+        case 'X':
+            return ['X', 'O']
+        case 'O':
+            return ['O', 'X']
 
 
 if __name__ == '__main__':
