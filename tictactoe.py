@@ -83,6 +83,9 @@ def choose_random_move_from_list(board, moves_list):
 
 
 def get_computer_move(board, computer_letter):
+    even_moves = [2, 4, 6, 8]
+    odd_moves = [1, 3, 7, 9]
+
     if computer_letter == 'X':
         player_letter = 'O'
     else:
@@ -95,6 +98,21 @@ def get_computer_move(board, computer_letter):
             if is_winner(board_copy, computer_letter):
                 return i
 
+    for i in range(1, 10):
+        board_copy = get_board_copy(board)
+        if is_space_free(board_copy, i):
+            make_move(board_copy, player_letter, i)
+            if is_winner(board_copy, player_letter):
+                return i
+
+    move = choose_random_move_from_list(board, odd_moves)
+    if move != None:
+        return move
+
+    if is_space_free(board, 5):
+        return 5
+
+    return choose_random_move_from_list(board, even_moves)
 
 
 if __name__ == '__main__':
