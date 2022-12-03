@@ -3,7 +3,7 @@ import random
 
 def welcome():
     print("Welcome to the 'Tic Tac Toe'!")
-    draw_board()
+    tic_tac_toe_game()
 
 
 def draw_board(board):
@@ -82,27 +82,27 @@ def choose_random_move_from_list(board, moves_list):
         return None
 
 
-def get_computer_move(board, computer_letter):
+def get_computer_move(board, computer_sign):
     even_moves = [2, 4, 6, 8]
     odd_moves = [1, 3, 7, 9]
 
-    if computer_letter == 'X':
-        player_letter = 'O'
+    if computer_sign == 'X':
+        player_sign = 'O'
     else:
-        player_letter = 'X'
+        player_sign = 'X'
 
     for i in range(1, 10):
         board_copy = get_board_copy(board)
         if is_space_free(board_copy, i):
-            make_move(board_copy, computer_letter, i)
-            if is_winner(board_copy, computer_letter):
+            make_move(board_copy, computer_sign, i)
+            if is_winner(board_copy, computer_sign):
                 return i
 
     for i in range(1, 10):
         board_copy = get_board_copy(board)
         if is_space_free(board_copy, i):
-            make_move(board_copy, player_letter, i)
-            if is_winner(board_copy, player_letter):
+            make_move(board_copy, player_sign, i)
+            if is_winner(board_copy, player_sign):
                 return i
 
     move = choose_random_move_from_list(board, odd_moves)
@@ -120,6 +120,60 @@ def is_board_full(board):
         if is_space_free(board, i):
             return False
     return True
+
+
+def tic_tac_toe_game():
+    while True:
+        the_board = [' '] * 10
+        player_sign, computer_sign = input_player_sign()
+        turn = first_step()
+        print(f'The {turn} will go first.')
+        game_is_active = True
+
+        while game_is_active:
+            if turn == 'Human':
+                draw_board(the_board)
+                move = get_player_move(the_board)
+                make_move(the_board, player_sign, move)
+
+                if is_winner(the_board, player_sign):
+                    draw_board(the_board)
+                    print('Congrats! You have won the game!')
+                    game_is_active = False
+                else:
+                    if is_board_full(the_board):
+                        draw_board(the_board)
+                        print('The game is a tie!')
+                        break
+                    else:
+                        turn = 'Computer'
+
+            else:
+                move = get_computer_move(the_board, computer_sign)
+                make_move(the_board, computer_sign, move)
+
+                if is_winner(the_board, player_sign):
+                    draw_board(the_board)
+                    print('The computer has beaten you! You lose.')
+                    game_is_active = False
+                else:
+                    if is_board_full(the_board):
+                        draw_board(the_board)
+                        print('The game is a tie!')
+                        break
+                    else:
+                        turn = 'Human'
+
+
+def play_again():
+    print("Wanna play again? (y/n)")
+    player_answer = input().lower()
+    match player_answer:
+        case 'y':
+            tic_tac_toe_game()
+        case 'n':
+            print("Well, good luck next time!")
+            exit()
 
 
 if __name__ == '__main__':
