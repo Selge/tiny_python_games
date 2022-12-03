@@ -56,5 +56,22 @@ def get_board_copy(board):
         board_copy.append(i)
     return board_copy
 
+
+def is_space_free(board, move):
+    return board[move] == ' '
+
+
+def get_player_move(board):
+    coordinates = '1 2 3 4 5 6 7 8 9'.split()
+    move = ' '
+    while move not in coordinates or not is_space_free(board, int(move)):
+        print('What is your next move? (1-9)')
+        move = input()
+    return int(move)
+
+
+
+
+
 if __name__ == '__main__':
     welcome()
