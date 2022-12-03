@@ -82,8 +82,19 @@ def choose_random_move_from_list(board, moves_list):
         return None
 
 
-def get_computer_move():
-    pass
+def get_computer_move(board, computer_letter):
+    if computer_letter == 'X':
+        player_letter = 'O'
+    else:
+        player_letter = 'X'
+
+    for i in range(1, 10):
+        board_copy = get_board_copy(board)
+        if is_space_free(board_copy, i):
+            make_move(board_copy, computer_letter, i)
+            if is_winner(board_copy, computer_letter):
+                return i
+
 
 
 if __name__ == '__main__':
