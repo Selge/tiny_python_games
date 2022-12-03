@@ -76,8 +76,14 @@ def choose_random_move_from_list(board, moves_list):
         if is_space_free(board, i):
             possible_moves.append(i)
 
+    if len(possible_moves) != 0:
+        return random.choice(possible_moves)
+    else:
+        return None
 
 
+def get_computer_move():
+    pass
 
 
 if __name__ == '__main__':
