@@ -115,5 +115,12 @@ def get_computer_move(board, computer_letter):
     return choose_random_move_from_list(board, even_moves)
 
 
+def is_board_full(board):
+    for i in range(1, 10):
+        if is_space_free(board, i):
+            return False
+    return True
+
+
 if __name__ == '__main__':
     welcome()
