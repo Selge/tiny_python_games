@@ -70,6 +70,13 @@ def get_player_move(board):
     return int(move)
 
 
+def choose_random_move_from_list(board, moves_list):
+    possible_moves = []
+    for i in moves_list:
+        if is_space_free(board, i):
+            possible_moves.append(i)
+
+
 
 
 
