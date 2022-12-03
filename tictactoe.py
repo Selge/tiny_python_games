@@ -50,5 +50,11 @@ def is_winner(board, sign):
             (board[9] == sign and board[5] == sign and board[1] == sign))
 
 
+def get_board_copy(board):
+    board_copy = []
+    for i in board:
+        board_copy.append(i)
+    return board_copy
+
 if __name__ == '__main__':
     welcome()
