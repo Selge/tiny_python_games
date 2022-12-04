@@ -4,11 +4,6 @@ from random import choice
 from MainMenu import welcome, play_again
 
 
-def welcome():
-    print("Welcome to the 'Coin Flip'!")
-    start()
-
-
 coin = ['head', 'tail']
 
 
@@ -123,4 +118,4 @@ def coin_flipper(coin_order, coin_side):
 
 
 if __name__ == '__main__':
-    welcome()
+    welcome("Welcome to the 'Coin Flip'!")

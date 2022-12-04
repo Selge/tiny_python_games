@@ -64,6 +64,7 @@ def game_menu():
 
 def welcome(game):
     print(game)
+    start()
 
 
 def play_again(game):
