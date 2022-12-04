@@ -4,7 +4,7 @@ import time
 from MainMenu import welcome, play_again
 
 
-def start():
+def dragon_cave():
     print("You're a travelling knight or a kind of treasure hunter in a land full of dragons.\n" 
           "You reached a mountain and in front of you, you see two caves:\n"
           "In one cave, the dragon is friendly and will share his treasure with you.\n" 
@@ -44,4 +44,4 @@ def check_cave():
 
 
 if __name__ == '__main__':
-    welcome("Welcome to the 'Dragon cave'!")
+    welcome("Welcome to the 'Dragon cave'!", dragon_cave())
