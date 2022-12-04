@@ -1,9 +1,6 @@
 import random
 
-
-def welcome():
-    print("Welcome to the 'Hangman'!")
-    hangman()
+from MainMenu import welcome, play_again
 
 
 HANGMAN_PICS = ['''
@@ -139,18 +136,7 @@ def get_guess(already_guessed):
             return guess
 
 
-def play_again():
-    print("Wanna play again? (y/n)")
-    player_answer = input().lower()
-    match player_answer:
-        case 'y':
-            hangman()
-        case 'n':
-            print("Well, good luck next time!")
-            exit()
-
-
-def hangman():
+def start():
     print("'H A N G M A N'")
 
     difficulty = 'X'
@@ -199,8 +185,8 @@ def hangman():
                 game_is_over = True
 
         if game_is_over:
-            play_again()
+            play_again(start())
 
 
 if __name__ == '__main__':
-    welcome()
+    welcome("Welcome to the 'Hangman'!")
