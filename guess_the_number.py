@@ -1,12 +1,9 @@
 import random
 
-
-def welcome():
-    print("Welcome to 'Guess the number'!")
-    game_menu()
+from MainMenu import welcome, play_again
 
 
-def game_menu():
+def start():
     print("Please choose target difficulty level. Type in:\n"
           " - 'a' to guess a number between 0 and 10\n"
           " - 'b' to guess a number between 0 and 100\n"
@@ -25,7 +22,7 @@ def game_menu():
             exit()
         case _:
             print("Please, use built-in options!")
-            game_menu()
+            start()
 
 
 def game_a():
@@ -49,20 +46,6 @@ def game_c():
     guess(number_c, range_guess)
 
 
-def restart():
-    print("Play again? y/n")
-    player_answer = str(input())
-    match player_answer:
-        case "y":
-            game_menu()
-        case "n":
-            print("Well, see ya later! Bye!")
-            exit()
-        case _:
-            print("Please, use built-in options!")
-            restart()
-
-
 def guess(number, range_guess):
     digits_taken = 0
     for digits_taken in range_guess:
@@ -77,12 +60,12 @@ def guess(number, range_guess):
     if player_guess == number:
         digits_taken = str(digits_taken + 1)
         print(f"Great! You've passed in {digits_taken} guesses.")
-        restart()
+        play_again(start())
     elif player_guess != number:
         number_guess = str(number)
         print(f"Alas. The number was: {number_guess}")
-        restart()
+        play_again(start())
 
 
 if __name__ == '__main__':
-    welcome()
+    welcome("Welcome to 'Guess the number'!")

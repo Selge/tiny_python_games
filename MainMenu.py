@@ -78,7 +78,7 @@ def play_again(game):
             print("Well, good luck next time!")
             exit()
         case "m":
-            start()
+            os.system("MainMenu.py")
         case _:
             exit()
 
