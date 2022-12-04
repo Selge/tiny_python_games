@@ -136,7 +136,7 @@ def get_guess(already_guessed):
             return guess
 
 
-def start():
+def hangman():
     print("'H A N G M A N'")
 
     difficulty = 'X'
@@ -185,8 +185,8 @@ def start():
                 game_is_over = True
 
         if game_is_over:
-            play_again(start())
+            play_again(hangman())
 
 
 if __name__ == '__main__':
-    welcome("Welcome to the 'Hangman'!")
+    welcome("Welcome to the 'Hangman'!", hangman())

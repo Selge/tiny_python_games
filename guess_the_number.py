@@ -3,7 +3,7 @@ import random
 from MainMenu import welcome, play_again
 
 
-def start():
+def guess_the_number():
     print("Please choose target difficulty level. Type in:\n"
           " - 'a' to guess a number between 0 and 10\n"
           " - 'b' to guess a number between 0 and 100\n"
@@ -22,7 +22,7 @@ def start():
             exit()
         case _:
             print("Please, use built-in options!")
-            start()
+            guess_the_number()
 
 
 def game_a():
@@ -60,12 +60,12 @@ def guess(number, range_guess):
     if player_guess == number:
         digits_taken = str(digits_taken + 1)
         print(f"Great! You've passed in {digits_taken} guesses.")
-        play_again(start())
+        play_again(guess_the_number())
     elif player_guess != number:
         number_guess = str(number)
         print(f"Alas. The number was: {number_guess}")
-        play_again(start())
+        play_again(guess_the_number())
 
 
 if __name__ == '__main__':
-    welcome("Welcome to 'Guess the number'!")
+    welcome("Welcome to 'Guess the number'!", guess_the_number())
