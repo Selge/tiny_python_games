@@ -65,7 +65,7 @@ def game_menu():
 
 def welcome(game_name: str, file_game):
     print(game_name)
-    time.sleep(3)
+    time.sleep(2)
     file_game()
 
 
@@ -80,7 +80,7 @@ def play_again(game):
             print("Well, good luck next time!")
             exit()
         case "m":
-            os.system("MainMenu.py")
+            game_menu()
         case _:
             exit()
 
