@@ -68,13 +68,18 @@ def welcome(game):
 
 
 def play_again(game):
-    print("Wanna play again? (y/n)")
+    print("Wanna play again? (y/n)\n"
+          "Or type in 'm' to get back to the main menu")
     player_answer = input().lower()
     match player_answer:
         case 'y':
             game()
         case 'n':
             print("Well, good luck next time!")
+            exit()
+        case "m":
+            start()
+        case _:
             exit()
 
 
