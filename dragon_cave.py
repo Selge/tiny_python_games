@@ -1,13 +1,10 @@
 import random
 import time
 
-
-def welcome():
-    print("Welcome to the 'Dragon cave'!")
-    display_intro()
+from MainMenu import welcome, play_again
 
 
-def display_intro():
+def start():
     print("You're a travelling knight or a kind of treasure hunter in a land full of dragons.\n" 
           "You reached a mountain and in front of you, you see two caves:\n"
           "In one cave, the dragon is friendly and will share his treasure with you.\n" 
@@ -43,18 +40,8 @@ def check_cave():
     else:
         print("Gobbles you down in one bite!")
 
-    play_again()
-
-
-def play_again():
-    print("Play once more? y/n")
-    play = str(input())
-    while play == 'y':
-        check_cave()
-
-    print("Well, good luck next time!")
-    exit()
+    play_again(check_cave())
 
 
 if __name__ == '__main__':
-    welcome()
+    welcome("Welcome to the 'Dragon cave'!")
