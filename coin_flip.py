@@ -7,7 +7,7 @@ from MainMenu import welcome, play_again
 coin = ['head', 'tail']
 
 
-def start():
+def coin_flip():
     print("What do you expect?\n"
           "- I want to flip a coin once (tap '1')"
           "- I want to play a flip coin game (tap '2')")
@@ -20,7 +20,7 @@ def start():
             flip_coin_game()
         case _:
             print("Please, use built-in options!")
-            start()
+            coin_flip()
 
 
 def flip_coin_once():
@@ -36,7 +36,7 @@ def flip_coin_once():
         case 'tail':
             print("Came up tails.")
 
-    play_again(start())
+    play_again(coin_flip())
 
 
 def flip_coin_game():
@@ -54,7 +54,7 @@ def flip_coin_game():
             print("Please, use built-in options!")
             flip_coin_game()
 
-    play_again(start())
+    play_again(coin_flip())
 
 
 def coin_flipper(coin_order, coin_side):
@@ -94,4 +94,4 @@ def coin_flipper(coin_order, coin_side):
 
 
 if __name__ == '__main__':
-    welcome("Welcome to the 'Coin Flip'!")
+    welcome("Welcome to the 'Coin Flip'!", coin_flip())

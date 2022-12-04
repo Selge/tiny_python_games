@@ -1,7 +1,7 @@
 import os
 
 
-def start():
+def menu():
     print("Welcome to the 'Tiny Python games'!\nPlease,type in your name: ")
     player_name = input()
     wanna_play(player_name)
@@ -62,9 +62,9 @@ def game_menu():
             print("Please, use built-in options!")
 
 
-def welcome(game):
+def welcome(game, file_game):
     print(game)
-    start()
+    file_game()
 
 
 def play_again(game):
@@ -84,4 +84,4 @@ def play_again(game):
 
 
 if __name__ == '__main__':
-    start()
+    menu()
