@@ -1,5 +1,6 @@
 import random
 
+import MainMenu
 from MainMenu import welcome, play_again
 
 

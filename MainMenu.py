@@ -1,5 +1,5 @@
 import os
-
+import time
 
 def menu():
     print("Welcome to the 'Tiny Python games'!\nPlease,type in your name: ")
@@ -62,8 +62,9 @@ def game_menu():
             print("Please, use built-in options!")
 
 
-def welcome(game, file_game):
-    print(game)
+def welcome(game_name: str, file_game):
+    print(game_name)
+    time.sleep(3)
     file_game()
 
 

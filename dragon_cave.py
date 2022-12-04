@@ -1,7 +1,7 @@
 import random
 import time
 
-from MainMenu import welcome, play_again
+import MainMenu as mm
 
 
 def dragon_cave():
@@ -40,8 +40,8 @@ def check_cave():
     else:
         print("Gobbles you down in one bite!")
 
-    play_again(check_cave())
+    mm.play_again(check_cave)
 
 
 if __name__ == '__main__':
-    welcome("Welcome to the 'Dragon cave'!", dragon_cave())
+    mm.welcome("Welcome to the 'Dragon cave'!", dragon_cave)
