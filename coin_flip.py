@@ -1,6 +1,8 @@
 import time
 from random import choice
 
+from MainMenu import welcome, play_again
+
 
 def welcome():
     print("Welcome to the 'Coin Flip'!")
