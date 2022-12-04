@@ -36,19 +36,7 @@ def flip_coin_once():
         case 'tail':
             print("Came up tails.")
 
-    print("Wanna try again? y/n\n"
-          "Or type in 'm' to get back to the main menu")
-    player_answer = str(input())
-    match player_answer:
-        case "y":
-            flip_coin_once()
-        case "n":
-            print("Well, see ya later! Bye!")
-            exit()
-        case "m":
-            start()
-        case _:
-            exit()
+    play_again(start())
 
 
 def flip_coin_game():
@@ -66,19 +54,7 @@ def flip_coin_game():
             print("Please, use built-in options!")
             flip_coin_game()
 
-    print("Wanna try again? y/n\n"
-          "Or type in 'm' to get back to the main menu")
-    player_answer = str(input())
-    match player_answer:
-        case "y":
-            flip_coin_game()
-        case "n":
-            print("Well, see ya later! Bye!")
-            exit()
-        case "m":
-            start()
-        case _:
-            exit()
+    play_again(start())
 
 
 def coin_flipper(coin_order, coin_side):
