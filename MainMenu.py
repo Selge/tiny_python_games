@@ -1,6 +1,7 @@
 import os
 import time
 
+
 def menu():
     print("Welcome to the 'Tiny Python games'!\nPlease,type in your name: ")
     player_name = input()
