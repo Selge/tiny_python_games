@@ -60,12 +60,12 @@ def guess(number, range_guess):
     if player_guess == number:
         digits_taken = str(digits_taken + 1)
         print(f"Great! You've passed in {digits_taken} guesses.")
-        play_again(guess_the_number())
+        play_again(guess_the_number)
     elif player_guess != number:
         number_guess = str(number)
         print(f"Alas. The number was: {number_guess}")
-        play_again(guess_the_number())
+        play_again(guess_the_number)
 
 
 if __name__ == '__main__':
-    welcome("Welcome to 'Guess the number'!", guess_the_number())
+    welcome("Welcome to 'Guess the number'!", guess_the_number)
