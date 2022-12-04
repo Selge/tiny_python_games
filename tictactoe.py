@@ -163,4 +163,4 @@ def tic_tac_toe_game():
 
 
 if __name__ == '__main__':
-    welcome("Welcome to the 'Tic Tac Toe'!", tic_tac_toe_game())
+    welcome("Welcome to the 'Tic Tac Toe'!", tic_tac_toe_game)

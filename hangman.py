@@ -1,6 +1,5 @@
 import random
 
-import MainMenu
 from MainMenu import welcome, play_again
 
 
@@ -174,6 +173,7 @@ def hangman():
                     break
             if found_all_letters:
                 print(f"Yes! The secret word is '{secret_word}'! You have won!")
+
                 game_is_over = True
         else:
             missed_letters = missed_letters + guess
@@ -186,8 +186,8 @@ def hangman():
                 game_is_over = True
 
         if game_is_over:
-            play_again(hangman())
+            play_again(hangman)
 
 
 if __name__ == '__main__':
-    welcome("Welcome to the 'Hangman'!", hangman())
+    welcome("Welcome to the 'Hangman'!", hangman)
