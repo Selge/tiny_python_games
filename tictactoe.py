@@ -162,16 +162,5 @@ def tic_tac_toe_game():
                         turn = 'Human'
 
 
-def play_again():
-    print("Wanna play again? (y/n)")
-    player_answer = input().lower()
-    match player_answer:
-        case 'y':
-            tic_tac_toe_game()
-        case 'n':
-            print("Well, good luck next time!")
-            exit()
-
-
 if __name__ == '__main__':
     welcome("Welcome to the 'Tic Tac Toe'!", tic_tac_toe_game())
