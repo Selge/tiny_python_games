@@ -1,9 +1,6 @@
 import random
 
-
-def welcome():
-    print("Welcome to the 'Tic Tac Toe'!")
-    tic_tac_toe_game()
+from MainMenu import welcome, play_again
 
 
 def draw_board(board):
@@ -177,4 +174,4 @@ def play_again():
 
 
 if __name__ == '__main__':
-    welcome()
+    welcome("Welcome to the 'Tic Tac Toe'!", tic_tac_toe_game())
