@@ -36,14 +36,22 @@ def make_move(board, sign, move):
 
 
 def is_winner(board, sign):
-    return ((board[7] == sign and board[8] == sign and board[9] == sign) or
+    # return ((board[7] == sign and board[8] == sign and board[9] == sign) or
+    #         (board[4] == sign and board[5] == sign and board[6] == sign) or
+    #         (board[1] == sign and board[2] == sign and board[3] == sign) or
+    #         (board[7] == sign and board[4] == sign and board[1] == sign) or
+    #         (board[8] == sign and board[5] == sign and board[2] == sign) or
+    #         (board[9] == sign and board[6] == sign and board[3] == sign) or
+    #         (board[7] == sign and board[5] == sign and board[3] == sign) or
+    #         (board[9] == sign and board[5] == sign and board[1] == sign))
+    return ((board[1] == sign and board[2] == sign and board[3] == sign) or
             (board[4] == sign and board[5] == sign and board[6] == sign) or
-            (board[1] == sign and board[2] == sign and board[3] == sign) or
-            (board[7] == sign and board[4] == sign and board[1] == sign) or
-            (board[8] == sign and board[5] == sign and board[2] == sign) or
-            (board[9] == sign and board[6] == sign and board[3] == sign) or
-            (board[7] == sign and board[5] == sign and board[3] == sign) or
-            (board[9] == sign and board[5] == sign and board[1] == sign))
+            (board[7] == sign and board[8] == sign and board[9] == sign) or
+            (board[1] == sign and board[4] == sign and board[7] == sign) or
+            (board[2] == sign and board[5] == sign and board[8] == sign) or
+            (board[3] == sign and board[6] == sign and board[9] == sign) or
+            (board[1] == sign and board[5] == sign and board[9] == sign) or
+            (board[3] == sign and board[5] == sign and board[7] == sign))
 
 
 def get_board_copy(board):
@@ -160,6 +168,7 @@ def tic_tac_toe_game():
                         turn = 'Human'
 
         play_again(tic_tac_toe_game)
+
 
 if __name__ == '__main__':
     welcome("Welcome to the 'Tic Tac Toe'!", tic_tac_toe_game)
