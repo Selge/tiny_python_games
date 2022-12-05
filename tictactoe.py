@@ -18,11 +18,10 @@ def input_player_sign():
         print('Do you want to be X or O?')
         sign = input().upper()
 
-    match sign:
-        case 'X':
-            return ['X', 'O']
-        case 'O':
-            return ['O', 'X']
+    if sign == 'X':
+        return ['X', 'O']
+    else:
+        return ['O', 'X']
 
 
 def first_step():
@@ -125,8 +124,8 @@ def tic_tac_toe_game():
         player_sign, computer_sign = input_player_sign()
         turn = first_step()
         print(f'The {turn} will go first.')
-
         game_is_active = True
+
         while game_is_active:
             if turn == 'Human':
                 draw_board(the_board)
