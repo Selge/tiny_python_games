@@ -3,11 +3,8 @@ import time
 
 from MainMenu import welcome, play_again
 
-NUM_DIGITS = 3
-MAX_GUESS = 10
 
-
-def get_secret_num():
+def get_secret_num(NUM_DIGITS):
     numbers = list(range(10))
     random.shuffle(numbers)
     secret_num = ''
@@ -44,7 +41,7 @@ def is_only_digits(num):
     return True
 
 
-def prompt():
+def prompt(NUM_DIGITS):
     print(f"I am thinking of a {NUM_DIGITS}-digit number. Try to guess what it is.")
     time.sleep(2)
     print("Here are some clues:\n"
@@ -54,10 +51,33 @@ def prompt():
           " 'Bagels'        No digit is correct.\n")
 
 
+def difficulty():
+    NUM_DIGITS = 0
+    MAX_GUESS = 0
+    iq_levels = {'E': 'Easy', 'M': 'Medium', 'H': 'Hard'}
+    difficulty = 'X'
+    while difficulty not in iq_levels.keys():
+        print('Enter difficulty: E - Easy, M - Medium, H - Hard')
+        difficulty = input().upper()
+        match difficulty:
+            case 'E':
+                NUM_DIGITS = 3
+                MAX_GUESS = 10
+            case 'M':
+                NUM_DIGITS = 4
+                MAX_GUESS = 8
+            case 'H':
+                NUM_DIGITS = 5
+                MAX_GUESS = 5
+
+        return NUM_DIGITS, MAX_GUESS
+
+
 def pico_fermi_bagels():
-    prompt()
+    NUM_DIGITS, MAX_GUESS = difficulty()
+    prompt(NUM_DIGITS)
     while True:
-        secret_num = get_secret_num()
+        secret_num = get_secret_num(NUM_DIGITS)
         print(f"I have thought up a number. You have {MAX_GUESS} guesses to get it.")
 
         guesses_taken = 1
