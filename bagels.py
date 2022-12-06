@@ -17,7 +17,7 @@ def get_clues(guess, secret_num):
     if guess == secret_num:
         return "You got it!"
 
-    clues = ()
+    clues = []
     for i in range(len(guess)):
         if guess[i] == secret_num[i]:
             clues.append("Fermi")
