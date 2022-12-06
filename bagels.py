@@ -48,7 +48,9 @@ def prompt(NUM_DIGITS):
           "When I say:      That means:\n"
           " 'Pico'          One digit is correct but in the wrong position.\n"
           " 'Fermi'         One digit is correct and in the right position.\n"
-          " 'Bagels'        No digit is correct.\n")
+          " 'Bagels'        No digit is correct.\n"
+          f"Please, note that each your guess must be a {NUM_DIGITS}-digit number,\n"
+          "otherwise the guess will not work out.")
 
 
 def difficulty():
