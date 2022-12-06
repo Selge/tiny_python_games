@@ -64,7 +64,18 @@ def pico_fermi_bagels():
         while guesses_taken <= MAX_GUESS:
             guess = ''
             while len(guess) != NUM_DIGITS or not is_only_digits(guess):
-                print()
+                print(f"Guess #{guesses_taken}: ")
+                guess = input()
+
+            print(get_clues(guess, secret_num))
+            guesses_taken += 1
+
+            if guess == secret_num:
+                break
+            if guesses_taken > MAX_GUESS:
+                print(f"You ran out of guesses. The answer was {secret_num}.")
+
+        play_again(pico_fermi_bagels)
 
 
 if __name__ == '__main__':
