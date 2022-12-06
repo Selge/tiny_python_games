@@ -32,5 +32,16 @@ def get_clues(guess, secret_num):
     clues.sort()
     return ' '.join(clues)
 
+
+def is_only_digits(num):
+    if num == '':
+        return False
+
+    for i in num:
+        if i not in '0 1 2 3 4 5 6 7 8 9'.split():
+            return False
+    return True
+
+
 if __name__ == '__main__':
     welcome("Welcome to the 'Bagels'!", bagels)
