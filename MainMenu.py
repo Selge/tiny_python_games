@@ -42,7 +42,7 @@ def game_menu():
         case 'a':
             pass
         case 'b':
-            pass
+            os.system("bagels.py")
         case 'c':
             os.system("coin_flip.py")
         case 'd':
