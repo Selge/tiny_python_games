@@ -21,7 +21,7 @@ def draw_board(board):
     tens_digits_line = ' '
     for i in range(1, 6):
         tens_digits_line += (' ' * 9) + str(i)
-        
+
 
 
 if __name__ == '__main__':
