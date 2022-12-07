@@ -94,5 +94,40 @@ class TinyPythonGames:
                 exit()
 
 
+class Bagels:
+    def __init__(self):
+        pass
+
+
+class CoinFlip:
+    def __init__(self):
+        pass
+
+
+class DragonCave:
+    def __init__(self):
+        pass
+
+
+class GuessTheNumber:
+    def __init__(self):
+        pass
+
+
+class Hangman:
+    def __init__(self):
+        pass
+
+
+class TicTacToe:
+    def __init__(self):
+        pass
+
+
+class SonarTreasureHunt:
+    def __init__(self):
+        pass
+
+
 if __name__ == '__main__':
     TinyPythonGames.menu()
