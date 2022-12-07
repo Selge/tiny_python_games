@@ -56,7 +56,7 @@ def game_menu():
         case 'r':
             pass
         case 's':
-            pass
+            os.system("sonar_treasure_hunt.py")
         case 't':
             os.system("tictactoe.py")
         case _:
