@@ -5,12 +5,12 @@
 
 ### Project inspirer:
 
-[![Al Sweigart book cover](Sweigart.jpg)](https://alsweigart.com/)
+[![Al Sweigart book cover](imgs/Sweigart.jpg)](https://alsweigart.com/)
 
 
 
 ### Project technologies:
 
-[![](python-logo.png)](https://www.python.org/)
+[![](imgs/python-logo.png)](https://www.python.org/)
 
 > Python 3 (I used Python 3.10)
