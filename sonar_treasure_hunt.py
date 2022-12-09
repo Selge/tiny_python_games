@@ -176,7 +176,30 @@ def sonar_treasure_hunt():
             previous_moves.append([x, y])
 
             move_result = make_move(the_board, the_chests, x, y)
-            
+            if move_result == False:
+                continue
+            else:
+                if move_result == "You have found a sunken treasure chest!":
+                    for x, y in previous_moves:
+                        make_move(the_board, the_chests, x, y)
+                    draw_board(the_board)
+                    print(move_result)
+
+            if len(the_chests) == 0:
+                print("You have found all the sunken treasure chests! Congratulations and good game!")
+                play_again(sonar_treasure_start)
+
+            sonar_devices -= 1
+
+        if sonar_devices == 0:
+            print("""
+            We've run out of sonar devices! Now we have to turn the ship around and head for home 
+            with treasure chests still out there! Game over.
+            """)
+            print(f"The remaining chests were here: ")
+            for x, y in the_chests:
+                print(f"{x}, {y}")
+            play_again(sonar_treasure_start)
 
 
 if __name__ == '__main__':
