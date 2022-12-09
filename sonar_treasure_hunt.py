@@ -117,11 +117,9 @@ The sonar device shows a '3' mark because the closest chest is 3 spaces away:
                 012345678901234567890123456789012
                           1         2         3
     (In the real game, the chests are not visible in the ocean.)
-    
-Push 'enter' to proceed...
 """)
 
-    input()
+    input("Push 'enter' to proceed...")
 
     print("""
 When you drop a sonar device directly on a chest, you retrieve it and the other sonar devices update 
@@ -141,25 +139,45 @@ so it shows an 'X' mark.
 The treasure chests don't move around. Sonar devices can detect treasure chests up to a distance of 9 spaces. 
 Try to collect all 3 chests before running out of sonar devices. 
 Good luck!
-    
-Push 'enter' to proceed...
 """)
 
-    input()
+    input("Push 'enter' to start the game.")
+    sonar_treasure_hunt()
 
 
-def sonar_treasure_hunt():
-    print("S O N A R")
-    print()
+def instructions():
     instructions = str(input("Would you like to view the instructions? (y/n)")).lower()
     match instructions:
         case 'y':
             show_instructions()
         case 'n':
-            continue
+            sonar_treasure_hunt()
         case _:
             print("Please, use built-in options!")
 
 
+def sonar_treasure_start():
+    print("S O N A R")
+    instructions()
+
+
+def sonar_treasure_hunt():
+    while True:
+        sonar_devices = 20
+        the_board = get_new_board()
+        the_chests = get_random_chests()
+        draw_board(the_board)
+        previous_moves = []
+
+        while sonar_devices > 0:
+            print(f"You have {sonar_devices} sonar device(s) left. {len(the_chests)} treasure chest(s) remaining.")
+
+            x, y = enter_player_move(previous_moves)
+            previous_moves.append([x, y])
+
+            move_result = make_move(the_board, the_chests, x, y)
+            
+
+
 if __name__ == '__main__':
-    welcome("Welcome to the 'Sonar Treasure Hunt'!", sonar_treasure_hunt)
+    welcome("Welcome to the 'Sonar Treasure Hunt'!", sonar_treasure_start)
