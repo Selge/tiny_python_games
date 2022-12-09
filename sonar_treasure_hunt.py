@@ -9,12 +9,12 @@ def get_new_board():
     board = []
     for x in range(60):
         board.append([])
-    for y in range(15):
-        if random.randint(0, 1) == 0:
-            board[x].append('~')
-        else:
-            board[x].append('`')
-        return board
+        for y in range(15):
+            if random.randint(0, 1) == 0:
+                board[x].append('~')
+            else:
+                board[x].append('`')
+    return board
 
 
 def draw_board(board):
@@ -36,7 +36,7 @@ def draw_board(board):
         for column in range(60):
             board_row += board[column][row]
 
-        print('%s%s %s %s' % (extra_space, row, board_row, row))
+        print(f"{extra_space}{row} {board_row} {row}")
 
     print()
     print(' ' + ('01234567890' * 6))
@@ -146,14 +146,15 @@ Good luck!
 
 
 def instructions():
-    instructions = str(input("Would you like to view the instructions? (y/n)")).lower()
-    match instructions:
+    question = str(input("Would you like to view the instructions? (y/n)")).lower()
+    match question:
         case 'y':
             show_instructions()
         case 'n':
             sonar_treasure_hunt()
         case _:
             print("Please, use built-in options!")
+            instructions()
 
 
 def sonar_treasure_start():
@@ -165,7 +166,7 @@ def sonar_treasure_hunt():
     while True:
         sonar_devices = 20
         the_board = get_new_board()
-        the_chests = get_random_chests()
+        the_chests = get_random_chests(3)
         draw_board(the_board)
         previous_moves = []
 
