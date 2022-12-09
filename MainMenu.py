@@ -10,7 +10,7 @@ def menu():
 
 def wanna_play(player_name):
     print(f"Well, {player_name}, wanna play a little bit? y/n?")
-    player_answer = str(input())
+    player_answer = str(input()).lower()
     match player_answer:
         case "y":
             game_menu()
@@ -36,7 +36,7 @@ def game_menu():
           " - t 'Tic Tac Toe' \n"
           " - e to exit the program")
 
-    choice = str(input())
+    choice = str(input()).lower()
 
     match choice:
         case 'a':
