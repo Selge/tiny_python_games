@@ -1,12 +1,18 @@
 # Tiny python games 
 
 ### Project description:
-#### Small games in Python, mostly console. A set of mini-games. All the code in the project is based on Al Sweigard's "Invent your own computer games with Python" book, but with my changes and additions. Hope you'll enjoy!
+#### Small games in Python, mostly console. A set of mini-games. All the code in the project is based on Al Sweigard's books (but with my changes and additions):
+- "Invent your own computer games with Python" 
 
-### Project inspirer:
+- "The Big Book of Small Python Projects"
 
-[![Al Sweigart book cover](imgs/Sweigart.jpg)](https://alsweigart.com/)
+Hope you'll enjoy!
 
+### Project inspired by: ###
+
+[![Invent with Python book cover](imgs/Sweigart.jpg)](https://inventwithpython.com/invent4thed/)
+
+[![Big PyProjects_book cover](imgs/cover_bigbookpython.jpg)](https://inventwithpython.com/bigbookpython/)
 
 
 ### Project technologies:
